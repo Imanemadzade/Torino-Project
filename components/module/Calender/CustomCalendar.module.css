@@ -1,0 +1,51 @@
+
+
+.container :global(.rmdp-container) {
+  width: 100%;
+}
+
+.container :global(.rmdp-input) {
+  height: auto;
+  padding: 8px;
+  border: 1px solid #00000050;
+  border-radius: 5px;
+  width: 100%;
+  
+}
+/* .container :global(.rmdp-input):focus {
+  color: #28A745;
+  border: 1px solid #28A745;
+
+} */
+
+/* 
+.container :global(.rmdp-wrapper ) {
+  display: flex;
+  justify-content: center;
+  width: 331px;
+  height: 269px;
+  border:1px solid #00000025;
+  border-radius:12px ;
+}
+
+.container :global(.rmdp-shadow ) {
+ box-shadow: none;
+}
+
+.container :global(.rmdp-wrapper .rmdp-header) {
+  width: 331px;
+  height: 32px;
+}
+
+
+
+.container :global(.rmdp-wrapper .rmdp-header button) {
+  display:none;
+}
+
+
+
+.container :global(.rmdp-top-class .rmdp-calendar) {
+ width: max-content;
+}
+ */
