@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-sm: 31.25rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 62rem;
+  --breakpoint-xl: 75rem;
+  --breakpoint-2xl: 90rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
