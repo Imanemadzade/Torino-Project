@@ -3,57 +3,43 @@ import { useState, useCallback } from "react";
 import AuthForm from "../AuthForm";
 import { useGetUserData } from "@/service/queries";
 import UserAccountMenu from "./HeaderLeftMenus/UserAccountMenu";
-import Image from "next/image";
+import ProfileIcon from "@/icons/ProfileIcon";
+import MobileSigninIcon from "@/icons/HeaderIcons/MobileSigninIcon";
 
 function HeaderLeftMenu() {
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const { data: user, isLoading } = useGetUserData();
+  const { data: user } = useGetUserData();
 
   const openAuthModal = useCallback(() => setIsOpenModal(true), []);
 
-  if (isLoading) return null; // or a skeleton
   if (user?.data) return <UserAccountMenu data={user} />;
 
   return (
-    <div className="select-none">
+    <div className="w-41.5">
       <button
         type="button"
         className="cursor-pointer md:hidden"
         onClick={openAuthModal}
-        aria-label="Sign in"
       >
-        <Image
-          src="/svg/sign-in.svg"
-          alt=""
-          width={1000}
-          height={1000}
-          className="size-6"
-        />
+        <MobileSigninIcon className="size-10 text-primary" />
       </button>
 
-      <div className="px-3.5 py-1 flex place-content-center gap-1.25 max-md:hidden text-brand-success border-3 rounded-md border-solid border-brand-success">
-        <div className="flex flex-row-reverse">
-          <button
-            type="button"
-            className="hover:text-green-400"
-            onClick={openAuthModal}
-          >
-            {t("auth.signIn")}
-          </button>
-          <img src="/svg/profile-icon.svg" alt="" width={20} height={20} />
-        </div>
-        <div className="cursor-auto" aria-hidden="true">
-          |
-        </div>
+      <div className="font-vazir text-[18px] hidden md:block ]">
         <button
           type="button"
-          className="hover:text-green-400"
+          className="p-2 flex items-center justify-baseline text-primary border-2 border-primary rounded-lg cursor-pointer"
           onClick={openAuthModal}
         >
-          {t("auth.register")}
+          <ProfileIcon className="size-5 text-primary" />
+          <span className="px-1 hover:text-primary-dark hover:bg-gray-200 hover:rounded-[5px]">
+            ورود
+          </span>
+          <span className="mx-1 bg-primary w-px h-5 "></span>
+          <span className="px-1 hover:text-primary-dark hover:bg-gray-200 hover:rounded-[5px]">
+            ثبت نام
+          </span>
         </button>
       </div>
-
       <AuthForm isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal} />
     </div>
   );
