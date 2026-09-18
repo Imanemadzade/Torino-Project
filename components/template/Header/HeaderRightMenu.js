@@ -1,5 +1,6 @@
-
+import HamburgerMenuIcon from "@/icons/HamburgerMenuIcon";
 import { menus } from "core/utils/headerMenus";
+import Image from "next/image";
 import Link from "next/link";
 
 function HeaderRightMenu() {
@@ -7,14 +8,20 @@ function HeaderRightMenu() {
     <div>
       <div className="lg:hidden">
         <span className="w-7.5">
-          <img src="/svg/hamburger-menu.svg" alt="hamburger picture" />
+          <HamburgerMenuIcon className="text-secondary w-5 h-4" />
         </span>
       </div>
       <div className="flex items-center space-between gap-7.5 max-lg:hidden">
         <span>
-          <img src="/images/torino-logo.webp" alt="torino logo" />
+          <Image
+            src="/images/torino-logo.webp"
+            width={300}
+            height={300}
+            alt="لوگو تورینو"
+            className="w-46.5 h-11"
+          />
         </span>
-        <ul className="flex space-between gap-5 font-medium  ">
+        <ul className="flex space-between gap-5 font-medium">
           {menus.map((menu) => (
             <li key={menu.id}>
               <Link href={menu.href}>{menu.title}</Link>

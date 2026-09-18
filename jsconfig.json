@@ -9,7 +9,8 @@
       "@/config/*": ["core/config/*"],
       "@/service/*": ["service/*"],
       "@/constans/*": ["constants/*"],
-      "@/icons/*": ["components/icons/*"]
+      "@/icons/*": ["components/icons/*"],
+      "@/headerIcons/*" :["components/icons/HeaderIcons/*"]
     }
   }
 }

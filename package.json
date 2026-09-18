@@ -27,6 +27,7 @@
     "react-otp-input": "^3.1.1",
     "react-toastify": "^11.1.0",
     "tailwindcss": "^4.2.2",
+    "vazirmatn": "^33.0.3",
     "yup": "^1.7.1",
     "zaman": "^2.1.1"
   },
